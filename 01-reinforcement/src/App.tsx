@@ -1,5 +1,7 @@
 // import { BasicTypes } from "./typescript/BasicTypes"
-import { ObjectLiterals } from "./typescript/ObjectLiterals"
+// import { ObjectLiterals } from "./typescript/ObjectLiterals"
+
+import { Functions } from "./typescript/Functions"
 
 const App = () => {
   return (
@@ -7,7 +9,8 @@ const App = () => {
       <h1>Introducción React / TS</h1>
       <hr />
       {/* <BasicTypes /> */}
-      <ObjectLiterals />
+      {/* <ObjectLiterals /> */}
+      <Functions />
     </div>
   )
 }

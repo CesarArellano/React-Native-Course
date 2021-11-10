@@ -1,6 +1,17 @@
+interface Person {
+  fullName: string,
+  age: number,
+  address: Address
+}
+
+interface Address {
+  country: string,
+  houseNumber: number
+}
+
 export const ObjectLiterals = () => {
-  const person = {
-    name: 'César',
+  const person: Person = {
+    fullName: 'César',
     age: 21,
     address: {
       country: 'México',
