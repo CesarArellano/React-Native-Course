@@ -1,0 +1,23 @@
+.utils__center-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.utils__loading-indicator {
+  border: 10px solid #474747;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border-left-color: #239adf;
+  animation: spin 1s linear infinite
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

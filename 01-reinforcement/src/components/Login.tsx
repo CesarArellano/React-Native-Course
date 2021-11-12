@@ -1,4 +1,5 @@
-import { useReducer } from "react"
+import { useEffect, useReducer } from "react"
+import { LoadingIndicator } from './LoadingIndicator';
 
 interface AuthState {
   validating: boolean,
@@ -19,6 +20,13 @@ type AuthAction = { type: 'logout' }
 const authReducer = ( state: AuthState, action:AuthAction ): AuthState => {
 
   switch(action.type) {
+    case 'logout': 
+      return {
+        validating: false,
+        token: null,
+        username: '',
+        name: ''
+      };
     default:
       return state;
   }
@@ -28,14 +36,28 @@ const authReducer = ( state: AuthState, action:AuthAction ): AuthState => {
 
 export const Login = () => {
 
-  const [state, dispatch] = useReducer(authReducer, initialState);
+  const [{ validating }, dispatch] = useReducer(authReducer, initialState);
+
+  useEffect(() => {
+    setTimeout(() => {
+      dispatch({ type: 'logout'});
+    }, 1500)
+    
+  }, []);
+
+  if( validating ) {
+    return (
+      <>
+        <h3>Login</h3>
+        <div className="alert alert-info">
+          Validando...
+        </div>
+      </>
+    )
+  }
 
   return (
-    <>
-      <h3>Login</h3>
-      <div className="alert alert-info">
-        Validando...
-      </div>
+    <>      
       <div className="alert alert-danger">
         No autenticado...
       </div>
