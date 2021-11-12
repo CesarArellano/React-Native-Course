@@ -1,12 +1,13 @@
 import { useEffect } from "react"
 import { reqResApi } from '../api/reqRes';
+import { ReqResList } from "../interfaces/reqRes";
 
 export const Users = () => {
 
   useEffect( () => {
     // Call to API
-    reqResApi.get('/users').then((resp) => {
-      console.log(resp.data.data);
+    reqResApi.get<ReqResList>('/users').then((resp) => {
+      console.log(resp.data.data[0].email);
       
     }).catch( console.log )
   }, [])
