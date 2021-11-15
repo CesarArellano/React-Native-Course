@@ -1,18 +1,10 @@
-import { useState } from "react"
+import { useForm } from '../hooks/useForm';
 
 export const Forms = () => {
-
-  const [formValues, setFormValues] = useState({
+  const { formValues, handleOnChange } = useForm({
     email: 'test@test.com',
     password: '123456'
   });
-
-  const onChange = ( field:string, value: string ) => {
-    setFormValues({
-      ...formValues,
-      [field]: value // Corchetes para computar la propiedad, para reemplazar con el field.
-    });
-  };
 
   return (
     <>
@@ -21,16 +13,14 @@ export const Forms = () => {
         type="email"
         className="form-control" 
         placeholder= "Email"
-        name="email"
         value={ formValues.email }
-        onChange={ ({ target }) => onChange(target.name, target.value) } />
+        onChange={ ({ target }) => handleOnChange('email', target.value) } />
       <input
         type="password"
         className="form-control mt-2" 
         placeholder= "Password"
-        name="password"
         value={ formValues.password }
-        onChange={ ({ target }) => onChange(target.name, target.value) }/>
+        onChange={ ({ target }) => handleOnChange('password', target.value) }/>
 
       <code className="mt-2">
         <pre>{ JSON.stringify(formValues, null, 2) }</pre>
