@@ -1,49 +1,20 @@
-import { useEffect, useRef, useState } from "react"
-import { reqResApi } from '../api/reqRes';
-import { ReqResList, User } from "../interfaces/reqRes";
+import { useUsers } from '../hooks/useUsers';
+import { User } from "../interfaces/reqRes";
 
 export const Users = () => {
-  const [users, setUsers] = useState<User[]>([])
+  const { users, loadUsers } = useUsers([]);
 
-  const pageRef = useRef(1);
-
-  useEffect( () => {
-    // Call to API
-    loadUsers();
-  }, [])
-
-  const loadUsers = async () => {
-    try {
-      const resp = await reqResApi.get<ReqResList>('/users', {
-        params: {
-          page: pageRef.current
-        }
-      });
-      console.log(pageRef.current);
-      
-      
-      if( resp.data.data.length > 0 ) {
-        setUsers( resp.data.data );
-        pageRef.current++;
-      } else {
-        alert('No hay más registros');
-      }
-
-    } catch (error) {
-      console.log(error);
-    }
-  }
   const renderItem = ({ id, avatar, first_name, last_name, email }: User) => {
     return (
       <tr key={ id.toString() }>
         <td>
-          <img 
+          <img
             src={ avatar }
             alt={ first_name }
             style={{
               width: 120,
               borderRadius: 100
-            }}
+            }} 
           />
         </td>
         <td>{ first_name } { last_name}</td>
@@ -71,7 +42,14 @@ export const Users = () => {
         </tbody>
       </table>
       <button
-        className="btn btn-primary"
+        className="btn btn-primary mb-4"
+        onClick={ loadUsers }
+      >
+        Anteriores
+      </button>
+      &nbsp;
+      <button
+        className="btn btn-primary mb-4"
         onClick={ loadUsers }
       >
         Siguientes
