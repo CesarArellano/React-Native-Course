@@ -7,7 +7,7 @@ export const useCounter = (initialState: number = 10) => {
     setCounter( counter + number );
   }
 
-  const handleDecrement = ( ) => {
+  const handleDecrement = () => {
     if(counter > 0) setCounter( counter - 1 )
   }
 

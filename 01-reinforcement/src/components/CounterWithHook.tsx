@@ -14,7 +14,7 @@ export const CounterWithHook = () => {
       &nbsp;
       <button
         className="btn btn-primary"
-        onClick={ () => handleDecrement() }
+        onClick={ handleDecrement }
       >
         -1
       </button>
