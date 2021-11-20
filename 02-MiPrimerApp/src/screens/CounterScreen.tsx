@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Text, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 export const CounterScreen = () => {
 
@@ -11,21 +11,38 @@ export const CounterScreen = () => {
 
   return (
     <View 
-      style={{ flex: 1, justifyContent: 'center' }}
+      style={ styles.container }
     >
       <Text 
-        style={{ 
-          textAlign: 'center',
-          fontSize: 50 
-        }}
+        style={ styles.title }
       >
         Counter: {counter}
       </Text>
 
-      <Button 
-        title="+"
-        onPress={ handleIncrement } />
+      <TouchableOpacity
+        onPress={ handleIncrement }
+      >
+        <View
+          style={ styles.incrementButton }
+        >
+        <Text>+</Text>
+        </View>
+      </TouchableOpacity>
 
     </View>
-  )
+  );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center'
+  },
+  title: { 
+    textAlign: 'center',
+    fontSize: 40 
+  },
+  incrementButton: {
+    borderRadius: 100
+  }
+});
