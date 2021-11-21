@@ -19,6 +19,13 @@ export const CounterScreen = () => {
 
       <Fab 
         title="+1"
+        onPress={ handleIncrement }
+      />
+
+      <Fab 
+        title="-1"
+        position='bl'
+        onPress={ handleDecrement }
       />
 
     </View>

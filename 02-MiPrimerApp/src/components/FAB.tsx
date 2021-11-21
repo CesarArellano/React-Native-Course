@@ -1,25 +1,57 @@
+import { JSXElement } from '@babel/types'
 import React from 'react'
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { StyleSheet, Text, TouchableNativeFeedback, View, Platform, TouchableOpacity } from 'react-native'
 
 interface Props {
-  title: string,
-  
+  title: string;
+  position?: 'br' | 'bl';
+  onPress: () => void;
 }
 
-export const Fab = ({ title }:Props) => {
+export const Fab = ({ title, onPress, position = 'br'}:Props) => {
   
-  return (
-    <TouchableOpacity
-      style={ styles.fabLocationBR }
-      onPress={ () => console.log('Click') }
-    >
-      <View
-        style={ styles.fab }
+  const ios = () => {
+    return (
+      <TouchableOpacity
+        activeOpacity={ 0.75 }
+        style={[
+          styles.fabLocation,
+          (position == 'br') ? styles.right : styles.left
+        ]}
+        onPress={ onPress }
       >
-      <Text style={ styles.fabText }> { title } </Text>
+        <View
+          style={ styles.fab }
+        >
+        <Text style={ styles.fabText }> { title } </Text>
+        </View>
+      </TouchableOpacity>
+    );
+  }
+
+  const android = () => {
+    return (
+      <View
+        style={[
+          styles.fabLocation,
+          (position == 'br') ? styles.right : styles.left
+        ]}
+      >
+        <TouchableNativeFeedback
+          onPress={ onPress }
+          background={TouchableNativeFeedback.Ripple('#28425B', false, 30)}
+        >
+          <View
+            style={ styles.fab }
+          >
+          <Text style={ styles.fabText }> { title } </Text>
+          </View>
+        </TouchableNativeFeedback>
       </View>
-    </TouchableOpacity>
-  )
+    )
+  }
+
+  return Platform.OS == 'ios' ? ios() : android()
 }
 
 const styles = StyleSheet.create({
@@ -28,7 +60,16 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
     borderRadius: 100,
-    justifyContent: 'center'
+    justifyContent: 'center',
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+
+    elevation: 5,
   },
   fabText: {
     color: 'white',
@@ -36,14 +77,14 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     alignSelf: 'center'
   },
-  fabLocationBR: {
+  fabLocation: {
     position: 'absolute',
     bottom: 40,
+  },
+  right: {
     right: 20
   },
-  fabLocationBL: {
-    position: 'absolute',
-    bottom: 40,
+  left: {
     left: 20
-  },
+  }
 });
