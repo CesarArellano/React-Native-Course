@@ -1,10 +1,18 @@
 import React from 'react';
-import { CounterScreen } from './src/screens/CounterScreen';
+import { SafeAreaView } from 'react-native';
+import { BoxObjectModelScreen } from './src/screens/BoxObjectModelScreen';
+// import { CounterScreen } from './src/screens/CounterScreen';
 // import { HelloWorldScreen } from './src/screens/HelloWorldScreen';
 
 export const App = () => {
   return (
-    // <HelloWorldScreen />
-    <CounterScreen />
+    <SafeAreaView>
+      {
+      /*<HelloWorldScreen />
+        <CounterScreen /> 
+      */
+      }
+      <BoxObjectModelScreen /> 
+    </SafeAreaView>
   )
 }
