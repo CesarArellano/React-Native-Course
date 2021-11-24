@@ -44,6 +44,6 @@ const styles = StyleSheet.create({
     // right:0,
     // bottom: 0,
     // left: 0,
-    ...StyleSheet.absoluteFillObject,
+    ...StyleSheet.absoluteFillObject, // Lo mismo que está comentado arriba.
   }
 });
