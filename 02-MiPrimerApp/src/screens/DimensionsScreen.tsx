@@ -22,20 +22,21 @@ export const DimensionsScreen = () => {
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    height: 200,
-    backgroundColor: 'blue'
+    height: 400,
+    backgroundColor: '#2D2D2D'
   },
 
   redBox: {
     backgroundColor: 'red',
-    height: '50%',
+    height: '20%',
   },
   orangeBox: {
-    backgroundColor: 'orange',
+    backgroundColor: 'green',
     width: '50%',
-    height: '50%',
+    height: '25%',
   },
   title:{
-    fontSize: 30
+    fontSize: 30,
+    color: 'white'
   }
 });

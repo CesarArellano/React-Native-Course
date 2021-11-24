@@ -7,7 +7,7 @@ import { DimensionsScreen } from './src/screens/DimensionsScreen';
 
 export const App = () => {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1}}>
       {
       /*<HelloWorldScreen />
         <CounterScreen /> 
