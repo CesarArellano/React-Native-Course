@@ -14,7 +14,10 @@ export const HomeworkScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#28425B'
+    flexDirection: 'row',
+    backgroundColor: '#28425B',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   purpleBox: {
     width: 100,
@@ -24,6 +27,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#5856D6'
   },
   orangeBox: {
+    top: 50,
     width: 100,
     height: 100,
     borderWidth: 10,
