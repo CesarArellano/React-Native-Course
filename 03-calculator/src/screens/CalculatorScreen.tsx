@@ -16,11 +16,36 @@ export const CalculatorScreen = () => {
   const buildNumber = ( numberText: string ) => {
     if( number.length > 15 ) return;
 
-    if( number == '0' ) {
-      return setNumber( numberText );
+    if( number.includes('.') && numberText === '.' ) return;
+
+    if( number.startsWith('0') || number.startsWith('-0') ) {
+
+      if( numberText === '.' ) {
+        setNumber( number + numberText );
+
+      } else if ( numberText === '0' && number.includes('.') ) {
+        setNumber( number + numberText );
+
+      } else if ( numberText === '0' && !number.includes('.') ) {
+        setNumber( numberText );
+      } else if ( numberText !== '0' && !number.includes('.') ) {
+        setNumber( numberText );
+
+      } else {
+        setNumber( number + numberText );
+      } 
+
+    } else {
+      setNumber( number + numberText );
+    }    
+  }
+
+  const changeSign = () => {
+    if( number.includes('-') ) {
+      setNumber( number.replace('-', ''))
+    } else {
+      setNumber( '-' + number )
     }
-    
-    setNumber( number + numberText );
   }
 
   return (
@@ -37,7 +62,7 @@ export const CalculatorScreen = () => {
 
       <View style={ styles.rowContainer }>
         <CalcButton text="C" color="#9B9B9B" onPress={ handleCleanResult } />
-        <CalcButton text="+/-" color="#9B9B9B" onPress={ handleCleanResult } />
+        <CalcButton text="+/-" color="#9B9B9B" onPress={ changeSign } />
         <CalcButton text="del" color="#9B9B9B" onPress={ handleCleanResult } />
         <CalcButton text="/" color="#FF9427" onPress={ handleCleanResult } />
       </View>
