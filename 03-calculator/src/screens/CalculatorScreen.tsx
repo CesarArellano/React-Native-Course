@@ -48,6 +48,23 @@ export const CalculatorScreen = () => {
     }
   }
 
+  const deleteLastEntry = () => {
+    if( number.length == 1 || ( number.startsWith('-') && number.length == 2 ) ) {
+      setNumber( initialState )
+    } else {
+      setNumber( number.substring( 0, number.length - 1 ) );
+    }
+  }
+  
+  const changeNumberByLastNumber = () => {
+    if( number.endsWith('.') ) {
+      setLastNumber( number.slice(0, -1) )
+    } else {
+      setLastNumber( number );
+    }
+    setNumber( initialState );
+  };
+
   return (
     <View style={ styles.calculatorContainer }>
 
@@ -63,8 +80,8 @@ export const CalculatorScreen = () => {
       <View style={ styles.rowContainer }>
         <CalcButton text="C" color="#9B9B9B" onPress={ handleCleanResult } />
         <CalcButton text="+/-" color="#9B9B9B" onPress={ changeSign } />
-        <CalcButton text="del" color="#9B9B9B" onPress={ handleCleanResult } />
-        <CalcButton text="/" color="#FF9427" onPress={ handleCleanResult } />
+        <CalcButton text="del" color="#9B9B9B" onPress={ deleteLastEntry } />
+        <CalcButton text="/" color="#FF9427" onPress={ changeNumberByLastNumber } />
       </View>
       <View style={ styles.rowContainer }>
         <CalcButton text="7" onPress={ buildNumber } />
