@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">calculator</string>
+    <string name="icon_splash_label">Icon Splash</string>
 </resources>
