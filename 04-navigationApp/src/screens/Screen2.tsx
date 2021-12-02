@@ -1,17 +1,38 @@
 import { useNavigation } from '@react-navigation/core'
-import React from 'react'
+import { StackScreenProps } from '@react-navigation/stack'
+import React, { useEffect } from 'react'
 import { Button, Text, View } from 'react-native'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 import { styles } from '../theme/appTheme'
 
-export const Screen2 = () => {
-  const navigation = useNavigation();
+interface Props extends StackScreenProps<any, any> { }
+
+export const Screen2 = ({ navigation }:Props ) => {
+  //const navigation = useNavigation();
+
+  useEffect(() => {
+    navigation.setOptions({
+      title: 'Screen 2 From Ops',
+      headerBackTitle: ''
+    })
+  }, [])
+
   return (
     <View style={ styles.globalMargin }>
-      <Text>Screen 2</Text>
+      <Text style={ styles.title }>Screen 2</Text>
       <Button 
         title="Ir a la página 3"
-        onPress={ () => navigation.navigate( 'Screen3' as any ) }
+        onPress={ () => navigation.navigate( 'Screen3' ) }
       />
+      <Text>Navegar con argumentos</Text>
+      <TouchableOpacity 
+        onPress={ () => navigation.navigate( 'PersonScreen', {
+          id: 1,
+          name: 'César'
+        }) }
+      >
+        <Text>Ir a Persona</Text>
+      </TouchableOpacity>
     </View>
   )
 }
