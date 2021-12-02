@@ -1,10 +1,18 @@
+import { StackScreenProps } from '@react-navigation/stack'
 import React from 'react'
-import { Text, View } from 'react-native'
+import { Button, Text, View } from 'react-native'
+import { styles } from '../theme/appTheme'
 
-export const Screen1 = () => {
+interface Props extends StackScreenProps<any, any> { }
+
+export const Screen1 = ( { navigation }:Props ) => {
+
   return (
-    <View>
-      <Text>Screen 1</Text>
+    <View style={ styles.globalMargin }>
+      <Button 
+        title="Ir a la página 2"
+        onPress={ () => navigation.navigate('Screen2') }
+      />
     </View>
   )
 }
