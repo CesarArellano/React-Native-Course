@@ -5,7 +5,14 @@ import { Screen2 } from '../screens/Screen2';
 import { Screen3 } from '../screens/Screen3';
 import { PersonScreen } from '../screens/PersonScreen';
 
-const Stack = createStackNavigator();
+export type RouteStackParams = {
+  Screen1: undefined, // Si no recibe args -> undefined.
+  Screen2: undefined,
+  Screen3: undefined,
+  PersonScreen: { id: number, name: string },
+}
+
+const Stack = createStackNavigator<RouteStackParams>();
 
 export const StackNavigator = () => {
   return (
