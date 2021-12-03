@@ -8,5 +8,18 @@ export const styles = StyleSheet.create({
     color: 'black',
     fontSize: 30,
     marginBottom: 10,
+  },
+  largeBtn: {
+    width: 80,
+    height: 80,
+    marginRight: 10,
+    borderRadius: 20,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  largeBtnText: {
+    color: 'white',
+    fontSize: 18,
+    fontWeight: 'bold',
   }
 });

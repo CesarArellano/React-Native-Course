@@ -25,23 +25,31 @@ export const Screen2 = ({ navigation }:Props ) => {
         onPress={ () => navigation.navigate( 'Screen3' ) }
       />
       <Text>Navegar con argumentos</Text>
-      <View style={{ flexDirection: 'row' }}>
-        <TouchableOpacity 
+      <View style={{ flexDirection: 'row', marginTop: 10 }}>
+        <TouchableOpacity
+          style={{
+            ...styles.largeBtn,
+            backgroundColor: '#5856D6'
+          }}
           onPress={ () => navigation.navigate( 'PersonScreen', {
             id: 1,
             name: 'César'
           }) }
         >
-          <Text>Ir a Persona</Text>
+          <Text style={ styles.largeBtnText }> César </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity 
+        <TouchableOpacity
+          style={{
+            ...styles.largeBtn,
+            backgroundColor: '#FF9427'
+          }}
           onPress={ () => navigation.navigate( 'PersonScreen', {
             id: 2,
             name: 'Jaqui'
           }) }
         >
-          <Text>Ir a Persona</Text>
+          <Text style={ styles.largeBtnText }>Jaqui</Text>
         </TouchableOpacity>
       </View>
     </View>
