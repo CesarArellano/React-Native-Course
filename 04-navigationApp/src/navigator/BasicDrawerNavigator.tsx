@@ -6,7 +6,7 @@ import { SettingsScreen } from '../screens/SettingsScreen';
 
 const Drawer = createDrawerNavigator();
 
-export const DrawerNavigator = () => {
+export const BasicDrawerNavigator = () => {
   return (
     <Drawer.Navigator
       // screenOptions={{

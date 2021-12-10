@@ -4,14 +4,16 @@ import 'react-native-gesture-handler';
 import { LogBox } from 'react-native';
 LogBox.ignoreLogs(['Reanimated 2']);
 import { NavigationContainer } from '@react-navigation/native';
-import { DrawerNavigator } from './src/navigator/DrawerNavigator';
+import { CustomDrawerNavigator } from './src/navigator/CustomDrawerNavigator';
 // import { StackNavigator } from './src/navigator/StackNavigator';
+// import { BasicDrawerNavigator } from './src/navigator/BasicDrawerNavigator';
 
 const App = () => {
   return (
     <NavigationContainer>
       {/* <StackNavigator /> */}
-      <DrawerNavigator />
+      {/* <BasicDrawerNavigator /> */}
+      <CustomDrawerNavigator />
     </NavigationContainer>
   )
 }
