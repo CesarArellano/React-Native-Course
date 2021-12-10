@@ -15,7 +15,7 @@ export const Screen1 = ( { navigation }:Props ) => {
         title="Ir a la página 2"
         onPress={ () => navigation.navigate('Screen2') }
       />
-      <Text>Navegar con argumentos</Text>
+      <Text style={{ fontSize: 18, marginVertical: 10 }} >Navegar con argumentos</Text>
       <View style={{ flexDirection: 'row', marginTop: 10 }}>
         <TouchableOpacity
           style={{
