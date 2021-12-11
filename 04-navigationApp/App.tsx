@@ -5,7 +5,7 @@ import { LogBox } from 'react-native';
 LogBox.ignoreLogs(['Reanimated 2']);
 import { NavigationContainer } from '@react-navigation/native';
 import { CustomDrawerNavigator } from './src/navigator/CustomDrawerNavigator';
-import { Tabs } from './src/navigator/Tabs';
+// import { Tabs } from './src/navigator/Tabs';
 // import { StackNavigator } from './src/navigator/StackNavigator';
 // import { BasicDrawerNavigator } from './src/navigator/BasicDrawerNavigator';
 
@@ -14,8 +14,8 @@ const App = () => {
     <NavigationContainer>
       {/* <StackNavigator /> */}
       {/* <BasicDrawerNavigator /> */}
-      {/* <CustomDrawerNavigator /> */}
-      <Tabs />
+      <CustomDrawerNavigator />
+      {/* <Tabs /> */}
     </NavigationContainer>
   )
 }
