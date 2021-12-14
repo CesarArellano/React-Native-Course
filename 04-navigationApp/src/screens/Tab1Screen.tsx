@@ -17,6 +17,11 @@ export const Tab1Screen = () => {
       <Text style={ styles.title }>Icons</Text>
       <Text>
         <Icon name="arrow-forward-outline" size={ 50 } color="black" />
+        <Icon name="arrow-redo-circle-outline" size={ 50 } color="black" />
+        <Icon name="battery-charging-outline" size={ 50 } color="black" />
+        <Icon name="bar-chart-outline" size={ 50 } color="black" />
+        <Icon name="camera-outline" size={ 50 } color="black" />
+        <Icon name="chatbox-outline" size={ 50 } color="black" />
       </Text>
     </View>
   )
