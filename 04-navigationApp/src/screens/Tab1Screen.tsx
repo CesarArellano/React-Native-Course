@@ -1,5 +1,9 @@
 import React, { useEffect } from 'react'
 import { Text, View } from 'react-native'
+import Icon from 'react-native-vector-icons/Ionicons';
+
+import { styles } from '../theme/appTheme';
+
 
 export const Tab1Screen = () => {
   
@@ -9,8 +13,11 @@ export const Tab1Screen = () => {
   }, []);
 
   return (
-    <View>
-      <Text>Tab1 Screen</Text>
+    <View style={ styles.globalMargin }>
+      <Text style={ styles.title }>Icons</Text>
+      <Text>
+        <Icon name="arrow-forward-outline" size={ 50 } color="black" />
+      </Text>
     </View>
   )
 }
