@@ -5,6 +5,7 @@ import { ChatScreen } from '../screens/ChatScreen';
 import { ContactsScreen } from '../screens/ContactsScreen';
 import { AlbumsScreen } from '../screens/AlbumsScreen';
 import { colors } from '../theme/appTheme';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const MaterialTopTab = createMaterialTopTabNavigator();
 
@@ -23,17 +24,19 @@ export const TopTabNavigator = () => {
           let iconName: string = '';
           switch ( route.name ) {
             case 'Chat':
-              iconName = 'T1';
+              iconName = 'chatbox-outline';
               break;
             case 'Contacts':
-              iconName = 'T2';
+              iconName = 'people-outline';
               break;
             case 'Albums':
-              iconName = 'T3';
+              iconName = 'albums-outline';
               break;
           }
 
-          return <Text style={{ color, }}>{ iconName }</Text>
+          return (
+            <Icon name={ iconName } size={ 20 } color={ focused ? "black" : "grey" } />
+          );
         }
       })}
       style={{

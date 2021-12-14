@@ -5,6 +5,7 @@ import { SettingsScreen } from '../screens/SettingsScreen';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
 import { styles } from '../theme/appTheme';
 import { Tabs } from './Tabs';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const Drawer = createDrawerNavigator();
 
@@ -42,13 +43,19 @@ const DrawerContent = ( { navigation }: DrawerContentComponentProps ) =>{
           style={ styles.menuBtn }
           onPress={ () => navigation.navigate('Tabs') }
         >
+          <Text style={ styles.mRight } >
+            <Icon name="home-outline" size={ 20 } />
+          </Text>
           <Text style={ styles.menuText }>Tabs</Text>
         </TouchableOpacity>
-
+        
         <TouchableOpacity
           style={ styles.menuBtn }
           onPress={ () => navigation.navigate('SettingsScreen') }
         >
+          <Text style={ styles.mRight } >
+            <Icon name="settings-outline" size={ 20 } />
+          </Text>
           <Text style={ styles.menuText }>Settings</Text>
         </TouchableOpacity>
 

@@ -2,6 +2,7 @@ import { StackScreenProps } from '@react-navigation/stack'
 import React from 'react'
 import { Button, Text, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
+import Icon from 'react-native-vector-icons/Ionicons'
 import { styles } from '../theme/appTheme'
 
 interface Props extends StackScreenProps<any, any> { }
@@ -27,7 +28,10 @@ export const Screen1 = ( { navigation }:Props ) => {
             name: 'César'
           }) }
         >
-          <Text style={ styles.largeBtnText }> César </Text>
+          <Text style={{ color: 'white', marginBottom: 5 }} >
+            <Icon name="man" size={ 30 } />
+          </Text>
+          <Text style={ styles.largeBtnText }>César</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
@@ -40,6 +44,9 @@ export const Screen1 = ( { navigation }:Props ) => {
             name: 'Jaqui'
           }) }
         >
+          <Text style={{ color: 'white', marginBottom: 5 }} >
+            <Icon name="woman" size={ 30 } />
+          </Text>
           <Text style={ styles.largeBtnText }>Jaqui</Text>
         </TouchableOpacity>
       </View>

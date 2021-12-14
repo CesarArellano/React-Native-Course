@@ -8,6 +8,9 @@ export const styles = StyleSheet.create({
   globalMargin: {
     marginHorizontal: 20,
   },
+  mRight: {
+    marginRight: 10,
+  },
   title: {
     color: 'black',
     fontSize: 30,
@@ -23,7 +26,7 @@ export const styles = StyleSheet.create({
   },
   largeBtnText: {
     color: 'white',
-    fontSize: 18,
+    fontSize: 14,
     fontWeight: 'bold',
   },
   avatarContainer: {
@@ -45,5 +48,6 @@ export const styles = StyleSheet.create({
   },
   menuBtn: {
     marginVertical: 10,
+    flexDirection: 'row',
   }
 });

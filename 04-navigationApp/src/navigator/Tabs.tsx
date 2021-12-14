@@ -1,5 +1,7 @@
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Icon from 'react-native-vector-icons/Ionicons';
+
 import React from 'react';
 
 import { Text, Platform } from 'react-native';
@@ -32,17 +34,19 @@ const AndroidTabs = () => {
           let iconName: string = '';
           switch ( route.name ) {
             case 'Tab1':
-              iconName = 'T1';
+              iconName = 'grid-outline';
               break;
             case 'Tab2':
-              iconName = 'T2';
+              iconName = 'copy-outline';
               break;
             case 'StackNavigator':
-              iconName = 'T3';
+              iconName = 'layers-outline';
               break;
           }
 
-          return <Text style={{ color, }}>{ iconName }</Text>
+          return (
+            <Icon name={ iconName } size={ 20 } color={ focused ? "black" : "grey" } />
+          );
         }
       })}
     >
@@ -65,25 +69,27 @@ const IosTabs = () => {
         elevation: 0,
       }}
       screenOptions={ ({ route }) => ({
-        tabBarActiveTintColor: colors.primary,
+        tabBarActiveTintColor: "black",
         tabBarLabelStyle: {
           fontSize: 15,
         },
-        tabBarIcon: ({ color, focused, size }) => {
+        tabBarIcon: ({ color, focused  }) => {
           let iconName: string = '';
           switch ( route.name ) {
             case 'Tab1':
-              iconName = 'T1';
+              iconName = 'grid-outline';
               break;
             case 'Tab2':
-              iconName = 'T2';
+              iconName = 'copy-outline';
               break;
             case 'StackNavigator':
-              iconName = 'T3';
+              iconName = 'layers-outline';
               break;
           }
 
-          return <Text style={{ color, }}>{ iconName }</Text>
+          return (
+            <Icon name={ iconName } size={ 20 } color={ focused ? "black" : "grey" } />
+          );
         }
       })}
     >
