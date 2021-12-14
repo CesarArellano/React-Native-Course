@@ -44,7 +44,7 @@ const DrawerContent = ( { navigation }: DrawerContentComponentProps ) =>{
           onPress={ () => navigation.navigate('Tabs') }
         >
           <Text style={ styles.mRight } >
-            <Icon name="home-outline" size={ 20 } />
+            <Icon name="home-outline" size={ 20 } color="black" />
           </Text>
           <Text style={ styles.menuText }>Tabs</Text>
         </TouchableOpacity>
@@ -54,7 +54,7 @@ const DrawerContent = ( { navigation }: DrawerContentComponentProps ) =>{
           onPress={ () => navigation.navigate('SettingsScreen') }
         >
           <Text style={ styles.mRight } >
-            <Icon name="settings-outline" size={ 20 } />
+            <Icon name="settings-outline" size={ 20 } color="black" />
           </Text>
           <Text style={ styles.menuText }>Settings</Text>
         </TouchableOpacity>

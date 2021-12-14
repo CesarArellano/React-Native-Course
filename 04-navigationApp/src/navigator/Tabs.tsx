@@ -45,7 +45,7 @@ const AndroidTabs = () => {
           }
 
           return (
-            <Icon name={ iconName } size={ 20 } color={ focused ? "black" : "grey" } />
+            <Icon name={ iconName } size={ 20 } color={ focused ? "white" : "grey" } />
           );
         }
       })}

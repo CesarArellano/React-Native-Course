@@ -44,7 +44,7 @@ export const styles = StyleSheet.create({
   },
   menuText: {
     fontSize: 18,
-
+    color: 'black'
   },
   menuBtn: {
     marginVertical: 10,
