@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { createDrawerNavigator, DrawerContentComponentProps, DrawerContentScrollView } from '@react-navigation/drawer';
-import { StackNavigator } from './StackNavigator';
 import { SettingsScreen } from '../screens/SettingsScreen';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
 import { styles } from '../theme/appTheme';
