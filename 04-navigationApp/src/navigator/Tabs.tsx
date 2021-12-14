@@ -21,7 +21,7 @@ const AndroidTabs = () => {
     <MaterialBottomTab.Navigator
       sceneAnimationEnabled={ true }
       barStyle={{
-        backgroundColor: 'black'
+        backgroundColor: 'black',
       }}
       screenOptions={ ({route}) => ({
         tabBarActiveTintColor: colors.primary,
