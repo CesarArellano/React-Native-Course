@@ -1,10 +1,10 @@
 import React from 'react'
 import { Text, View } from 'react-native'
 
-export const Tab2Screen = () => {
+export const ChatScreen = () => {
   return (
     <View>
-      <Text>Tab2 Screen</Text>
+      <Text>Chat Screen Top Tab</Text>
     </View>
   )
 }
