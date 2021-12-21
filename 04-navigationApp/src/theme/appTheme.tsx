@@ -43,11 +43,16 @@ export const styles = StyleSheet.create({
     marginHorizontal: 30,
   },
   menuText: {
-    fontSize: 18,
+    fontSize: 30,
     color: 'black'
   },
   menuBtn: {
     marginVertical: 10,
     flexDirection: 'row',
-  }
+  },
+  settingsText: {
+    color: 'black',
+    fontSize: 20,
+    marginTop: 10,
+  },
 });
