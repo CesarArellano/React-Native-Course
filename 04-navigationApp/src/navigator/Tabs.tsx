@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import React from 'react';
 
-import { Text, Platform } from 'react-native';
+import { Platform } from 'react-native';
 import { Tab1Screen } from '../screens/Tab1Screen';
 import { StackNavigator } from './StackNavigator';
 import { TopTabNavigator } from './TopTabNavigator';
