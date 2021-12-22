@@ -1,10 +1,17 @@
+import { StackScreenProps } from '@react-navigation/stack';
 import React from 'react';
 import { Text, View} from 'react-native';
+import { RootStackParams } from '../navigation/Navigation';
 
-export const DetailScreen = () => {
+interface Props extends StackScreenProps<RootStackParams, 'DetailScreen'>{};
+
+export const DetailScreen = ({ route }: Props) => {
+
+  const movie = route.params;
+  
   return (
-    <View>
-      <Text> Detail Screen </Text>
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <Text>{ movie.title } </Text>
     </View>
   );
 }

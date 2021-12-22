@@ -1,24 +1,33 @@
 import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, TouchableOpacity, View} from 'react-native';
+import { useNavigation } from '@react-navigation/core';
 import { Movie } from '../interfaces/movie_interface';
 
 interface Props {
-  movie: Movie
+  movie: Movie,
+  height?: number,
+  width?: number,
 }
 
-export const MoviePoster = ({ movie }: Props ) => {
-  const uri = `https://image.tmdb.org/t/p/w500${ movie.poster_path }`;
-  console.log(uri);
+export const MoviePoster = ({ movie, height = 420, width = 300 }: Props ) => {
   
+  const uri = `https://image.tmdb.org/t/p/w500${ movie.poster_path }`;
+  const navigation = useNavigation<any>();
+
   return (
-    <View style={{
-      width: 300,
-      height: 420,
-    }}>
+    <TouchableOpacity
+      activeOpacity={ 0.8 }
+      style={{
+        width,
+        height,
+        marginHorizontal: 8
+      }}
+      onPress={ () => navigation.navigate('DetailScreen', movie) }
+    >
       <View style={ styles.imageContainer }>
         <Image source={{ uri }} style={ styles.image }/>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 
@@ -36,6 +45,6 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.30,
     shadowRadius: 5,
-    elevation: 6
+
   }
 });
