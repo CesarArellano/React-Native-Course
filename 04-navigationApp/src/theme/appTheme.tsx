@@ -43,7 +43,7 @@ export const styles = StyleSheet.create({
     marginHorizontal: 30,
   },
   menuText: {
-    fontSize: 30,
+    fontSize: 20,
     color: 'black'
   },
   menuBtn: {
@@ -53,6 +53,5 @@ export const styles = StyleSheet.create({
   settingsText: {
     color: 'black',
     fontSize: 20,
-    marginTop: 10,
   },
 });
