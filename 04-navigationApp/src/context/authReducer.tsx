@@ -2,6 +2,7 @@ import { AuthState } from "./AuthContext";
 
 type AuthAction = 
   | { type: 'signIn' }
+  | { type: 'logOut' }
   | { type: 'changeFavIcon', payload: string }
 
 export const authReducer = ( state: AuthState, action: AuthAction ): AuthState => {
@@ -13,6 +14,13 @@ export const authReducer = ( state: AuthState, action: AuthAction ): AuthState =
         isLoggedIn: true,
         username: 'César',
       };
+    case 'logOut':
+      return {
+        ...state,
+        isLoggedIn: false,
+        favoriteIcon: undefined,
+        username: undefined,
+      }
     case 'changeFavIcon':
       return {
         ...state,
