@@ -14,7 +14,7 @@ export const HorizontalSlider = ({ title = 'Populares', movies }: Props ) => {
     <View style={{
       height: 250,
     }}>
-      <Text style={{ fontSize: 30, fontWeight: 'bold' }}> { title } </Text>
+      <Text style={ styles.titleText }> { title } </Text>
       <FlatList
         keyExtractor={ (item) => item.id.toString() }
         data={ movies }
@@ -27,5 +27,11 @@ export const HorizontalSlider = ({ title = 'Populares', movies }: Props ) => {
 }
 
 const styles = StyleSheet.create({
-
+  titleText: {
+    color: 'black',
+    fontSize: 30,
+    fontWeight: 'bold',
+    marginLeft: 4,
+    marginBottom: 5
+  },
 });

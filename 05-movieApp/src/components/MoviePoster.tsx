@@ -20,7 +20,9 @@ export const MoviePoster = ({ movie, height = 420, width = 300 }: Props ) => {
       style={{
         width,
         height,
-        marginHorizontal: 8
+        marginHorizontal: 4,
+        paddingBottom: 10,
+        paddingHorizontal: 5
       }}
       onPress={ () => navigation.navigate('DetailScreen', movie) }
     >
@@ -45,6 +47,6 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.30,
     shadowRadius: 5,
-
+    elevation: 8
   }
 });
