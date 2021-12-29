@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { ScrollView, ActivityIndicator, Dimensions, View, Platform} from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
@@ -9,6 +9,7 @@ import { MoviePoster } from '../components/MoviePoster';
 import { HorizontalSlider } from '../components/HorizontalSlider';
 import { GradientBackground } from '../components/GradientBackground';
 import { getColors } from '../helpers/getColors';
+import { GradientContext } from '../context/GradientContext';
 
 const maxWidth = Dimensions.get('window').width;
 
@@ -17,13 +18,22 @@ export const HomeScreen = () => {
   const { top, bottom } = useSafeAreaInsets();
 
   const getPosterColors = async ( index: number ) => {
-
+    const { setMainColors } = useContext(GradientContext);
     const uri = `https://image.tmdb.org/t/p/w500${ nowPlaying[index].poster_path }`;
-    const { primaryColor, secondaryColor } = await getColors(uri);
+    const { primaryColor = 'green', secondaryColor = 'orange' } = await getColors(uri);
     console.log( primaryColor, secondaryColor );
-    
+    setMainColors( {
+      primary: primaryColor,
+      secondary: secondaryColor
+    })
   };
 
+  useEffect(() => {
+    if( nowPlaying.length > 0 ) {
+      getPosterColors(0);
+    }
+  }, [ nowPlaying ])
+  
   if( isLoading ) {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
