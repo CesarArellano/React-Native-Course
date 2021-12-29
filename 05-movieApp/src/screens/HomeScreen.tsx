@@ -28,11 +28,11 @@ export const HomeScreen = () => {
     })
   };
 
-  useEffect(() => {
-    if( nowPlaying.length > 0 ) {
-      getPosterColors(0);
-    }
-  }, [ nowPlaying ])
+  // useEffect(() => {
+  //   if( nowPlaying.length > 0 ) {
+  //     getPosterColors(0);
+  //   }
+  // }, [ nowPlaying ])
   
   if( isLoading ) {
     return (
