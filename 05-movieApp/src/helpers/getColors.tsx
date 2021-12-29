@@ -4,24 +4,27 @@ export const getColors = async ( uri: string ) => {
 
   let primaryColor, secondaryColor;
 
-  const color = await ImageColors.getColors(uri, {fallback:'grey' })
+  const colors:any = await ImageColors.getColors(uri, {});
 
   try {
-    if( color.platform === 'android' ) {
-      primaryColor = color.dominant || 'grey';
-      secondaryColor = color.average || 'grey';
-    } else if ( color.platform == 'ios' ) {
-      primaryColor = color.primary || 'grey';
-      secondaryColor = color.secondary || 'grey';
+    if( colors.platform === 'android' ) {
+      primaryColor = colors.dominant || 'grey';
+      secondaryColor = colors.average || 'grey';
+    } else {
+      primaryColor = colors.primary || 'grey';
+      secondaryColor = colors.secondary || 'grey';
+    }
+    return {
+      primaryColor,
+      secondaryColor
     }
   } catch(e) {
     console.log(e);
-    primaryColor = 'grey',
-    secondaryColor = 'green' 
-  }
-
-  return {
-    primaryColor,
-    secondaryColor
+    primaryColor = 'grey';
+    secondaryColor = 'green';
+    return {
+      primaryColor,
+      secondaryColor
+    }
   }
 }
