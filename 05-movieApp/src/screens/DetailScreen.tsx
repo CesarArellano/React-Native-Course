@@ -32,13 +32,12 @@ export const DetailScreen = ({ route }: Props) => {
       <View style={ styles.globalMargin }>
         <Text style={ styles.titleText } > { movie.title } </Text>
         <Text style={ styles.subtitleText } > { movie.original_title } </Text>
-        
-        {
-          isLoading
-            ? <ActivityIndicator />
-            : <MovieDetails movieFull={ movie } cast={ cast } />
-        }
       </View>
+      {
+        isLoading
+          ? <ActivityIndicator />
+          : <MovieDetails movieFull={ movie } cast={ cast } />
+      }
     </ScrollView>
   );
 }

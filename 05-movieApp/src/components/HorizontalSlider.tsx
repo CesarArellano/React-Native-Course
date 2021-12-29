@@ -16,8 +16,8 @@ export const HorizontalSlider = ({ title = 'Populares', movies }: Props ) => {
     }}>
       <Text style={ styles.titleText }> { title } </Text>
       <FlatList
-        keyExtractor={ (item) => item.id.toString() }
         data={ movies }
+        keyExtractor={ (item) => item.id.toString() }
         renderItem={ ({ item: movie }) => <MoviePoster movie={ movie } height={ 200 } width={ 140 } /> }
         horizontal={ true }
         showsHorizontalScrollIndicator={ false }
