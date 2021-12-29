@@ -3,7 +3,6 @@ import React from 'react';
 import { ActivityIndicator, Dimensions, Image, StyleSheet, Text, View} from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { RootStackParams } from '../navigation/Navigation';
-import Icon from 'react-native-vector-icons/Ionicons';
 import { useMovieDetails } from '../hooks/useMovieDetails';
 import { MovieDetails } from '../components/MovieDetails';
 

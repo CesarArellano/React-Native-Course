@@ -27,7 +27,6 @@ export const MovieDetails = ({ movieFull, cast }: Props) => {
       </View>
       
       <FlatList
-        
         data={ cast }
         keyExtractor={ ( item ) => item.id.toString() }
         renderItem={ ( { item:actor } ) => <CastItem actor={ actor } /> }
@@ -50,16 +49,19 @@ const styles = StyleSheet.create({
     alignItems:'center'
   },
   starsTitle: {
+    color: 'black',
     fontSize: 16,
     fontWeight: 'bold',
     marginLeft: 8,
   },
   overviewTitle: {
+    color: 'black',
     fontSize: 24,
     marginTop: 10,
     fontWeight: 'bold'
   },
   overview: {
+    color: 'black',
     textAlign: 'justify',
     fontSize: 16,
     marginVertical: 5

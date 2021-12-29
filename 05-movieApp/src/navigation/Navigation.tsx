@@ -4,7 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { HomeScreen } from '../screens/HomeScreen';
 import { DetailScreen } from '../screens/DetailScreen';
 import { Movie } from '../interfaces/movieInterface';
-import { Button, TouchableOpacity } from 'react-native';
+import { Button, ToastAndroid, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 export type RootStackParams = {
@@ -37,7 +37,7 @@ export const Navigation = () => {
           headerRight: () => (
             <TouchableOpacity
               style={{ marginRight: 15 }}
-              onPress={() => console.log('This is a button!')}
+              onPress={ () => ToastAndroid.show("Buscar películas", ToastAndroid.SHORT) }
             >
             <Icon name="search-outline" color="white" size={ 25 }/>
             </TouchableOpacity>

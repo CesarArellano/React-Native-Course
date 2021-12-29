@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.30,
     shadowRadius: 5,
-    elevation: 8,
+    elevation: 4,
     padding: 15,
     borderRadius: 15,
     marginRight: 10,
@@ -54,11 +54,13 @@ const styles = StyleSheet.create({
     marginRight: 15,
   },
   cardTitle: {
+    color: 'black',
     fontSize: 18,
     fontWeight: 'bold'
   },
   cardSubtitle: {
+    color: 'black',
     fontSize: 16,
-    opacity: 0.8
+    opacity: 0.7
   }
 });
