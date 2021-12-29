@@ -4,7 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { HomeScreen } from '../screens/HomeScreen';
 import { DetailScreen } from '../screens/DetailScreen';
 import { Movie } from '../interfaces/movieInterface';
-import { Button, ToastAndroid, TouchableOpacity } from 'react-native';
+import { Platform, ToastAndroid, Alert, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 export type RootStackParams = {
@@ -37,7 +37,12 @@ export const Navigation = () => {
           headerRight: () => (
             <TouchableOpacity
               style={{ marginRight: 15 }}
-              onPress={ () => ToastAndroid.show("Buscar películas", ToastAndroid.SHORT) }
+              onPress={ () => {
+                if( Platform.OS == 'ios') {
+                  return Alert.alert('Buscar películas');
+                }
+                ToastAndroid.show("Buscar películas", ToastAndroid.SHORT) 
+              }}
             >
             <Icon name="search-outline" color="white" size={ 25 }/>
             </TouchableOpacity>

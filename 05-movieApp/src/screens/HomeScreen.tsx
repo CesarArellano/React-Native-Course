@@ -24,7 +24,7 @@ export const HomeScreen = () => {
 
   return (
     <ScrollView>
-      <View style={{ marginTop: top + 20, marginBottom: bottom }}>
+      <View style={{ marginTop: top - 20, marginBottom: bottom }}>
         <View style={{ height: 440 }}>
           <Carousel
             data={ nowPlaying }
