@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import movieDB from '../api/movieDB';
-import { Movie, MovieDbNowPlaying } from '../interfaces/movie_interface';
+import { Movie, MovieDbNowPlaying } from '../interfaces/movieInterface';
 
 interface MoviesState {
   nowPlaying: Movie[];
@@ -29,7 +29,7 @@ export const useMovies = () => {
       popularPromise,
       topRatedPromise,
       upcomingPromise,
-    ])
+    ]);
 
     setMoviesState({
       nowPlaying: resp[0].data.results,

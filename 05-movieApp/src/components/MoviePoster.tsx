@@ -1,7 +1,7 @@
 import React from 'react';
 import {Image, StyleSheet, TouchableOpacity, View} from 'react-native';
 import { useNavigation } from '@react-navigation/core';
-import { Movie } from '../interfaces/movie_interface';
+import { Movie } from '../interfaces/movieInterface';
 
 interface Props {
   movie: Movie,

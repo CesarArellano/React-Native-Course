@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
-import { Movie } from '../interfaces/movie_interface';
+import { Movie } from '../interfaces/movieInterface';
 import { MoviePoster } from './MoviePoster';
 
 interface Props {

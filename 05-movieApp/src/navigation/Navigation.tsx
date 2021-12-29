@@ -3,7 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import { HomeScreen } from '../screens/HomeScreen';
 import { DetailScreen } from '../screens/DetailScreen';
-import { Movie } from '../interfaces/movie_interface';
+import { Movie } from '../interfaces/movieInterface';
 
 export type RootStackParams = {
   HomeScreen: undefined;
