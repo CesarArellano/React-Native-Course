@@ -8,7 +8,7 @@ import { useMovies } from '../hooks/useMovies';
 import { MoviePoster } from '../components/MoviePoster';
 import { HorizontalSlider } from '../components/HorizontalSlider';
 import { GradientBackground } from '../components/GradientBackground';
-import { getColors } from '../helpers/getColors';
+import { getImageColors } from '../helpers/getColors';
 import { GradientContext } from '../context/GradientContext';
 
 const maxWidth = Dimensions.get('window').width;
@@ -20,7 +20,7 @@ export const HomeScreen = () => {
   const getPosterColors = async ( index: number ) => {
     const { setMainColors } = useContext(GradientContext);
     const uri = `https://image.tmdb.org/t/p/w500${ nowPlaying[index].poster_path }`;
-    const { primaryColor = 'green', secondaryColor = 'orange' } = await getColors(uri);
+    const [ primaryColor = 'green', secondaryColor = 'orange' ] = await getImageColors(uri);
     console.log( primaryColor, secondaryColor );
     setMainColors( {
       primary: primaryColor,
@@ -28,11 +28,11 @@ export const HomeScreen = () => {
     })
   };
 
-  // useEffect(() => {
-  //   if( nowPlaying.length > 0 ) {
-  //     getPosterColors(0);
-  //   }
-  // }, [ nowPlaying ])
+  useEffect(() => {
+    if( nowPlaying.length > 0 ) {
+      getPosterColors(0)
+    }
+  }, [ nowPlaying ])
   
   if( isLoading ) {
     return (
